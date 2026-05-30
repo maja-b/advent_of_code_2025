@@ -9,7 +9,10 @@ with open('day6_input.txt') as f:
 
 columns = list(zip(*[row.split() for row in numbers_rows]))
 operations = operations_row.split()
-results = [OPERATIONS[sign](int(n) for n in numbers) for numbers, sign in zip(columns, operations)]
+results = [
+    OPERATIONS[sign](int(n) for n in numbers)
+    for numbers, sign in zip(columns, operations)
+]
 print(f'Solution to Part 1 of Day 6: {sum(results)}')
 
 columns_transposed = list(zip(*numbers_rows))
